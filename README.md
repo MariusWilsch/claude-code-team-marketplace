@@ -93,20 +93,48 @@ curl http://localhost:28888/health
 ### Public Repository (default)
 
 ```
-/plugin marketplace add MariusWilsch/claude-code-team-plugin
+/plugin marketplace add MariusWilsch/claude-code-team-marketplace
 /plugin install claude-code-team-plugin@wilsch-ai-plugins
 ```
 
+### Update
+
+```
+/plugin marketplace update wilsch-ai-plugins
+/plugin update claude-code-team-plugin@wilsch-ai-plugins
+```
+
+Restart Claude Code after updating for changes to take effect.
+
+### Troubleshooting
+
+If `/plugin marketplace add` fails with a clone error:
+
+1. Remove any existing marketplace entry:
+   ```
+   /plugin marketplace remove wilsch-ai-plugins
+   ```
+
+2. Clean up leftover files:
+   ```bash
+   rm -rf ~/.claude/plugins/marketplaces/MariusWilsch-claude-code-team-marketplace
+   ```
+
+3. Retry:
+   ```
+   /plugin marketplace add MariusWilsch/claude-code-team-marketplace
+   ```
+
 ### Private Repository Setup
 
-If this repo is private, each user needs to configure GitHub authentication before installing.
+If this repo is made private, each user needs to configure GitHub authentication.
 
 **Step 1: Create a GitHub Fine-Grained Personal Access Token (PAT)**
 
 1. Go to [GitHub Settings > Developer Settings > Fine-grained tokens](https://github.com/settings/personal-access-tokens/new)
 2. Configure the token:
-   - **Token name**: `claude-code-team-plugin`
-   - **Repository access**: "Only select repositories" > `MariusWilsch/claude-code-team-plugin`
+   - **Token name**: `claude-code-team-marketplace`
+   - **Repository access**: "Only select repositories" > `MariusWilsch/claude-code-team-marketplace`
    - **Permissions**: Contents > Read-only
    - **Expiration**: choose based on your security policy
 3. Click "Generate token" and copy it (`github_pat_...`)
@@ -128,7 +156,7 @@ source ~/.zshrc  # or source ~/.bashrc
 **Step 3: Add marketplace and install**
 
 ```
-/plugin marketplace add MariusWilsch/claude-code-team-plugin
+/plugin marketplace add MariusWilsch/claude-code-team-marketplace
 /plugin install claude-code-team-plugin@wilsch-ai-plugins
 ```
 
