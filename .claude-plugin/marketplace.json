@@ -1,0 +1,19 @@
+{
+  "name": "wilsch-ai-plugins",
+  "version": "2026-02-09-09-31",
+  "description": "Wilsch AI team plugins for Claude Code",
+  "metadata": {
+    "description": "Team onboarding plugin with clarity workflow commands, worktree skill, issue tracking statusline, and commit guards."
+  },
+  "owner": {
+    "name": "Marius Wilsch",
+    "email": "marius@wilsch-ai.com"
+  },
+  "plugins": [
+    {
+      "name": "claude-code-team-plugin",
+      "source": "./plugins/claude-code-team-plugin",
+      "description": "See README.md for full documentation"
+    }
+  ]
+}
